@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+  Copyright (C) 2016  Tarek Sherif
+ -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Streaming Assets in the BioDigital Human</title>
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="plugin/highlight/styles/docco.css">
+  <link rel="icon" type="image/png" href="img/bd-logo.png">
+  <style>
+
+    .reveal h1 {
+      font-size: 3.2em;
+    }
+
+    .reveal .slide-number {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .reveal section img {
+      max-height: 400px;
+    }
+
+    .reveal pre {
+      margin-left: -12%;
+      box-shadow: none;
+      width: 125%;
+    }
+
+    .reveal .sub-header {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 0.15em;
+    }
+
+    .reveal .me {
+      margin-top: 42px;
+    }
+
+    .reveal ul ul {
+      font-size: 0.8em;
+    }
+
+    .reveal .subtitles h2 {
+      margin-bottom: 0;
+      margin-top: 40px;
+    }
+
+    .reveal .credits {
+      margin-top: 40px;
+      text-align: left;
+      padding-left: 30%;
+    }
+
+    #logo {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      height: 4%;
+    }
+
+    iframe {
+      width: 1000px;
+      height: 600px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Streaming Assets in the BioDigital Human</h1>
+        <p class="me">Tarek Sherif</p>
+        <p>BioDigital</p>
+      </section>
+
+      <section>
+        <h3>What BioDigital Does</h3>
+        <iframe id="humanwidget" src="https://human.biodigital.com/widget/?m=production/maleAdult/heart.json&ui-tools=true&dk=dc1db956ebbe5c71e7100d9420c7362c9a53535d"></iframe>
+      </section>
+
+      <section>
+        <h3>BioDigital's Goals</h3>
+        <ul>
+          <li>Use interactive 3D to make anatomical content engaging</li>
+          <li>
+            Move beyond the anatomy atlas
+            <ul>
+              <li>Tell stories</li>
+              <li>Bring content to life</li>
+              <li>Map data to and from 3D models</li>
+            </ul>
+          </li>
+          <li>Make it all widely accessible through the Web</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The BioDigital Human Platform</h3>
+        <ul>
+          <li>
+            3D content library
+            <ul>
+              <li>12,000 anatomy objects</li>
+              <li>1,000 health conditions</li>
+            </ul>
+          </li>
+          <li>
+            Rendering engine built on SceneJS
+          </li>
+          <li>User-created annotations and custom views</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Key Clients</h3>
+        <ul>
+          <li>Medical device manufacturers</li>
+          <li>Pharmaceutical</li>
+          <li>Educational</li>
+          <li>Medical students</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The BioDigital Human API</h3>
+        <ul>
+          <li>
+            Enable outside developers to build applications on top of the BioDigital Human Platform
+            <ul>
+              <li>Load BioDigital renderer and 3D content into an iframe</li>
+              <li>Manipulate the 3D scene via a JavaScript API</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h3>The Problem</h3>
+        <ul>
+          <li>
+            Big data!
+            <ul>
+              <li>Clients in medicine</li>
+              <li>Models need to be accurate</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The Problem</h3>
+        <ul>
+          <li>
+            Rigid data!
+            <ul>
+              <li>Users can only load what our artists have created</li>
+              <li>Load everything before first render</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The Solution</h3>
+        <ul>
+          <li>
+            Stream all the things!
+            <ul>
+              <li>Artists create assets as whole scenes</li>
+              <li>Back end makes assets individually addressable</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>The Solution</h3>
+        <img src="img/assetserver.png">
+      </section>
+
+      <section>
+        <h3>The Solution</h3>
+        <ul>
+          <li>
+            Client can:
+            <ul>
+              <li>Stream assets in and gradually build up a scene</li>
+              <li>Only load what it needs</li>
+              <li>Create "mash ups" between different scenes our artists have created</li>
+              <li>Swap assets</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Examples</h3>
+        <ul>
+          <li><a target="_blank" href="https://human.biodigital.com/index.html">Streaming our Base Anatomy</a></li>
+          <li><a target="_blank" href="https://preview.biodigital.com/widgets/asset-conf-demo/#/heart-conditions">Swapping Objects</a></li>
+          <li><a target="_blank" href="https://preview.biodigital.com/widgets/asset-conf-demo/#/patient-timeline">Patient Timeline</a></li>
+        </ul>
+      </section>
+
+       <section>
+        <h3>Interested in learning more?</h3>
+        <ul>
+          <li>
+            Try out the API!
+            <a target="_blank" href="https://developer.biodigital.com">developer.biodigital.com</a>
+          </li>
+          <li>
+            BioDigital summer internships!
+          </li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h1>Thanks!</h1>
+        <div class="credits">
+          <ul>
+            <li><a href="mailto:tarek@biodigital.com">tarek@biodigital.com</a></li>
+            <li><a target="_blank" href="https://twitter.com/thsherif">@thsherif</a></li>
+            <li><a target="_blank" href="https://www.biodigital.com">www.biodigital.com</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <img id="logo" src="img/logo.png">
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.min.js"></script>
+  <script src="js/highlight.min.js"></script>
+  <script src="js/human-api.js"></script>
+  <script>
+    Reveal.initialize({
+      // transition: "none",
+      history: true,
+      slideNumber: true,
+      controls: false
+    });
+
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+</html>
